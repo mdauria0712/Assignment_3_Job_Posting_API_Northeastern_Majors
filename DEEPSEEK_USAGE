@@ -1,0 +1,8 @@
+In this project, I used deepseak for two main purposes, 1. to help find relevant jobs to college majors, and 2. to clean the northeastern_major dataset.
+
+1. Since it would be extremely time-consuming to research the potential and most relevant jobs for every college major, I thought it would be good to use the deepseek API,
+to provide accurate and efficient information to create datasets. I prompted deepseeks chat feature to provide a list of the top 10 most relevant jobs. Then I made it into a 
+Python List, and put it into the Job Search API to make the dataset
+
+2. When I web-scraped Northeasterns college program website, it misinterpreted many information on the website as college majors, so I prompted deepseek to find which "Majors" 
+within the dataset, that didn't look like college majors, and I removed it from the dataset to clean it.
