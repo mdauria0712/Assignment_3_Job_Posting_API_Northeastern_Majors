@@ -6,7 +6,7 @@ import requests
 
 # Store your API key securely (environment variable is best)
 #API key for DeepSeek
-DEEPSEEK_API_KEY = "sk-a7f42564324a433b836f39b479e4dfa8"
+DEEPSEEK_API_KEY = "Insert Deepseek API Key, I removed it before submitting"
 
 def ask_deepseek(question):
     url = "https://api.deepseek.com/v1/chat/completions"
