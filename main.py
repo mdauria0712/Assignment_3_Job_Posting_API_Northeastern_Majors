@@ -48,8 +48,8 @@ try:
 except Exception as e:
     print("\nCould not parse response:\n", response_text, "\nError:", e)
 
-APP_ID = "866ee2f8"
-APP_KEY = "5e97010575c8e9dca47d8539685c068d"
+APP_ID = "Information is in in IceRynk Submission"
+APP_KEY = "Information is linked in IceRynk Submission"
 url = "https://api.adzuna.com/v1/api/jobs/us/search/1"
 
 all_jobs = []
@@ -84,7 +84,7 @@ df = pd.DataFrame(all_jobs)
 print(len(df))
 print(df.head())
 print("\nAverage Salary Max across all roles:", df["Salary Max"].mean())
-
+#Provides Information about which relevant job will make a professional the most money on average, based on the data provided
 salary_by_job = (
     df.groupby(["Search Title"])["Salary Max"]
       .mean()
