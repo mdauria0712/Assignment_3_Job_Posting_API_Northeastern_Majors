@@ -1,0 +1,32 @@
+northeastern = pd.read_csv("northeastern_individual_majors.csv")
+NE_Majors=northeastern["Major"].tolist()
+question_data = (
+    "Create a Python list of which items in this list do not look like valid college majors: "
+    + str(NE_Majors)
+)
+
+response_text = ask_deepseek(question_data)
+print(response_text)
+
+import re, ast
+
+# Find the first [...] block in the response
+match = re.search(r"\[.*\]", response_text, re.DOTALL)
+if match:
+    list_str = match.group(0)
+    non_majors = ast.literal_eval(list_str)
+else:
+    non_majors = []
+
+print(non_majors)
+
+# Assuming 'non_majors' is already defined as a Python list
+print("Non-majors identified:", non_majors)
+
+# Overwrite northeastern with only the valid majors
+northeastern = northeastern[~northeastern["Major"].isin(non_majors)].copy()
+
+print(f"Cleaned DataFrame has {len(northeastern)} unique majors")
+print(northeastern.head())
+# Save the cleaned DataFrame to a new CSV file
+northeastern.to_csv("northeastern_cleaned.csv", index=False)
