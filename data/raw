@@ -1,0 +1,8 @@
+import pandas as pd
+#Jobs API Dataframe
+df=pd.read_csv("jobs.csv")
+#Northeastern Majors Dataframe
+northeastern = pd.read_csv("northeastern_majors.csv")
+NE_Majors=northeastern["Major"].tolist()
+
+print(NE_Majors)
